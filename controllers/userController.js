@@ -63,7 +63,7 @@ const loginUser = asyncHandler(async (req, res) => {
           { expiresIn: "5m" }
         );
 
-        res.json({ accessToken:accessToken });
+        res.json({ accessToken: accessToken });
       } else {
         res.json({ message: "password not valid" });
       }
@@ -73,8 +73,6 @@ const loginUser = asyncHandler(async (req, res) => {
         .status(200)
         .json({ message: "user not found with this email" });
     }
-
-    
   } catch (err) {
     res.status(405).json({ message: "Server Error" });
   }
